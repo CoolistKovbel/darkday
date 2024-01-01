@@ -19,11 +19,9 @@ function Featured() {
 
   useEffect(() => {
     const x = async () => {
-      const res = await fetch("/api/featured")
-
-      
+      const res = await fetch("/api/featured")      
       const f: ThereType[] = await res.json()
-      console.log(f)
+      console.log("Featured post", f)
       setOg(f[0])
     }
     x()
@@ -39,13 +37,13 @@ function Featured() {
     <div className='mt-[30px]'>
       {/* Title */}
 
-      <h1 className=' text-2xl md:text-[96px] font-bold'>
-        <a href="/" className='leading-[90px]'>Hey th3_g3ntl3m4n here, express myself..</a>
+      <h1 className=' text-2xl md:text-5xl font-bold'>
+        <a href="/" className='leading-[90px]'>Hey th3_g3ntl3m4n here, expressing myself..</a>
       </h1>
 
 
       {/* Featured Posts */}
-      <div className='mt-[60px] flex align-center gap-[50px]  flex-col md:flex-row'>
+      <div className='mt-[60px] flex align-center gap-[50px] flex-col md:flex-row'>
 
         {/* Image container */}
         <div className='relative w-[300px] md:w-[800px] h-[300px] md:h-[500px] shadow-lg'>
@@ -65,8 +63,6 @@ function Featured() {
 
       </div>
 
-
-      
     </div>
   )
 }

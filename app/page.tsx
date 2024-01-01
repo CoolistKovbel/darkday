@@ -17,9 +17,11 @@ export default function Home({ searchParams }: HomeProps) {
       <CategoryList />
 
       <div className="flex justify-between gap-[50px] flex-col md:flex-row">
+
         <CardList page={page} cat="code" />
 
         <Menu />
+        
       </div>
     </main>
   );

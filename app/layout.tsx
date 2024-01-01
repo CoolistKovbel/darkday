@@ -9,8 +9,8 @@ import AuthProvider from "../components/providers/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "RawrXD",
-  description: "The place to get your latest thoughts and stuff.",
+  title: "Lyub12",
+  description: "The place to hear my thoughts or maybe share yours?",
 };
 
 export default function RootLayout({
@@ -33,9 +33,11 @@ export default function RootLayout({
             <div className="m-w-[1536px] mx-auto h-full text-white">
 
               <NavBar />
+
               <div className="p-6">
                 {children}
               </div>
+              
               <Footer />
 
             </div>

@@ -28,7 +28,7 @@ function CardList({ page, cat }: CardListProps) {
   const [postsz, setPosts] = useState([]);
   const [counts, setCount] = useState("");
 
-  const POST_PER_PAGE = 2;
+  const POST_PER_PAGE = 3;
 
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
 

@@ -33,6 +33,7 @@ function CategoryList() {
     
       {/* Categories */}
       <div className="flex justify-between text-center gap-10 flex-wrap flex-col md:flex-row">
+
         {/* Category */}
 
         {dataz &&
@@ -46,16 +47,19 @@ function CategoryList() {
                 <Image
                   src={item.img}
                   alt="cat"
-                  width={80}
-                  height={80}
+                  width={70}
+                  height={70}
                   className="rounded-full"
                 />
               )}
 
               <p className="font-bold">{item.title}</p>
+
             </Link>
           ))}
+
       </div>
+
     </div>
   );
 }
