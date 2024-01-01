@@ -1,6 +1,7 @@
 
 import { db } from "@/lib/db";
 import { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 
 export default async function GET(req: NextApiRequest, res: NextApiResponse) {
    
@@ -11,10 +12,10 @@ export default async function GET(req: NextApiRequest, res: NextApiResponse) {
                 }
             });
     
-            return res.status(200).json(data);
+            return NextResponse.json(data, {status: 200});
         } catch (error) {
             console.error("Error:", error);
-            return res.status(500).json({ error: "Internal Server Error" });
+            return res.json({ error: "Internal Server Error" , status: 500});
         }
 
 }
