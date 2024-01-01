@@ -24,14 +24,14 @@ const Footer = () => {
 
       <div className="flex justify-end gap-[100px]">
         <div className=" flex flex-col gap-[10px] font-semibold">
-          <span className=" font-bold">Links</span>
+          <span className="bg-emerald-500 p-2 text-center rounded-md font-bold">Links</span>
           <Link href="/">Home</Link>
           <Link href="/">Blog</Link>
           <Link href="/">About</Link>
           <Link href="/">Contact</Link>
         </div>
         <div className=" flex flex-col gap-[10px] font-semibold">
-          <span className=" font-bold">Social</span>
+          <span className="bg-emerald-500 p-2 text-center rounded-md font-bold">Social</span>
           <Link href="/">Instagram</Link>
           <Link href="/">Tiktok</Link>
           <Link href="/">Youtube</Link>

@@ -34,7 +34,7 @@ export default function RootLayout({
 
               <NavBar />
 
-              <div className="p-6">
+              <div className="p-6 w-full h-full">
                 {children}
               </div>
               

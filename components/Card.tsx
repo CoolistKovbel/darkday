@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import moment from "moment";
 
 interface CardProps {
   item: any;
@@ -8,17 +9,17 @@ interface CardProps {
 
 function Card({ item }: CardProps) {
   return (
-    <div className="mb-[50px] flex items-center gap-[50px] bg-[#111] shadow-lg" key={crypto.randomUUID()}>
+    <div className="mb-[50px] bg-[#222] flex items-center gap-[50px] bg-[#111] shadow-lg" key={crypto.randomUUID()}>
       {/* Image container */}
       <div className="w-[300px] h-[300px] relative">
 
         <Image src={item.img} alt="blog item" fill />
 
-        <div className="absolute bottom-0 right-0">
-          <span className="p-4 bg-black text-emerald-500">
-            {item.createdAt.substring(0, 10)} -
+        <div className="absolute p-4 bg-black bottom-0 right-0">
+          <span className="text-emerald-500 mr-2">
+            {moment(item.createdAt.toString()).fromNow()}
           </span>
-          <span className="font-bold p-4">{item.catSlug}</span>
+          <span className="font-bold">{item.catSlug}</span>
         </div>
 
       </div>

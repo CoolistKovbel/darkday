@@ -14,7 +14,7 @@ export default function Home({ searchParams }: HomeProps) {
     <main className="w-full">
       <Featured />
 
-      <CategoryList />
+      <CategoryList withImage={true} />
 
       <div className="flex justify-between gap-[50px] flex-col md:flex-row">
 

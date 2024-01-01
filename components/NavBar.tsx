@@ -53,9 +53,9 @@ function NavBar() {
         {/* <ModeToggle /> */}
         <div className="hidden md:block w-[300px] flex item-center gap-10">
           <Link href="/" className="w-10 p-2 font-bold border-2 hover:bg-orange-800">Home</Link>
-          <Link href="/" className="w-10 p-2 font-bold border-2 hover:bg-orange-800">About</Link>
-          <Link href="/" className="w-10 p-2 font-bold border-2 hover:bg-orange-800">Blog</Link>
-          <Link href="/" className="w-10 p-2 font-bold border-2 hover:bg-orange-800">Defi</Link>
+          <Link href="/about" className="w-10 p-2 font-bold border-2 hover:bg-orange-800">About</Link>
+          <Link href="/blog" className="w-10 p-2 font-bold border-2 hover:bg-orange-800">Blog</Link>
+          <Link href="/defi" className="w-10 p-2 font-bold border-2 hover:bg-orange-800">Defi</Link>
         </div>
         <MobileAuth />
         

@@ -16,7 +16,11 @@ const getData = async () => {
   return res.json();
 };
 
-function CategoryList() {
+interface CategoryList{
+  withImage: boolean
+}
+
+function CategoryList({withImage}: CategoryList) {
   const [dataz, setDataZ] = useState([]);
 
   useEffect(() => {
@@ -43,7 +47,7 @@ function CategoryList() {
               key={item._id}
               className="flex items-center relative gap-3 capitalize bg-[#111] w-[40%] md:w-[15%] h-[80px] justify-center drop-shadow-lg shadow-[#50d71e] border-2 border-[#222] rounded-md m-auto"
             >
-              {item.img && (
+              {withImage &&  (
                 <Image
                   src={item.img}
                   alt="cat"

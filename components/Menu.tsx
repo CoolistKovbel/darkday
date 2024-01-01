@@ -17,7 +17,7 @@ function Menu() {
       <h3 className='text-[gray] text-[16px] font-400'>Categories:</h3>
 
       {/* CATEGORY POSTS */}
-      <CategoryList />
+      <CategoryList withImage={false} />
 
       <h2 className='text-[28px]'>Chosen by the editor</h2>
       <h3 className='text-[gray] text-[16px] font-400'>Editors pick:</h3>

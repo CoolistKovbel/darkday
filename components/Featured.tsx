@@ -53,7 +53,7 @@ function Featured() {
         <div className='flex-1 flex  justify-between flex-col'>
           <div>
             <h2 className='text-2xl md:text-4xl font-bold mb-2'>{title}</h2>
-            <p className='leading-6'>
+            <p className='leading-6 mt-10'>
               {desc}
             </p>
           </div>

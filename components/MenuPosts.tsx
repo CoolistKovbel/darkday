@@ -39,7 +39,7 @@ const MenuPosts = ({withImage}:MenuPostsProps) => {
           )}
   
           <div className="w-[300px] flex flex-col gap-[5px] p-2">
-            <span className="px-[8px] py-[3px] text-[10px] bg-black text-white inline-block w-[25%] text-center font-bold rounded-md">{item.catSlug}</span>
+            <span className="px-[8px] py-[3px] text-[10px] bg-black text-white inline-block w-[25%] bg-emerald-500 uppercase text-center font-bold rounded-md">{item.catSlug}</span>
             <h3 className="text-[18px] font-bold my-2">
               {item.title}
             </h3>
