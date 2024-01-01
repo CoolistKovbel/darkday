@@ -1,22 +1,17 @@
-import { db } from "@/lib/db"
-import { NextResponse } from "next/server"
+import { db } from "@/lib/db";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(res:Response) {
+export async function get(req: NextRequest, res: NextResponse) {
     try {
-
-
-        const res = await db.post.findMany({
-            where:{
+        const data = await db.post.findMany({
+            where: {
                 featured: true
             }
-        })
+        });
 
-
-        return NextResponse.json(res, {status: 200})
-
-        
+        return NextResponse.json(data, { status: 200 });
     } catch (error) {
-        console.log("Error")
-        return NextResponse.json(error, {status: 500})
+        console.error("Error:", error);
+        return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
 }
