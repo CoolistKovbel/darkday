@@ -2,8 +2,8 @@
 import { db } from "@/lib/db";
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    if (req.method === 'GET') {
+export default async function GET(req: NextApiRequest, res: NextApiResponse) {
+   
         try {
             const data = await db.post.findMany({
                 where: {
@@ -16,7 +16,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             console.error("Error:", error);
             return res.status(500).json({ error: "Internal Server Error" });
         }
-    } else {
-        res.status(405).json({ error: "Method Not Allowed" });
-    }
+
 }
