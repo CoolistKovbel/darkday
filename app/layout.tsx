@@ -30,10 +30,12 @@ export default function RootLayout({
           > */}
 
           <div className="bg-[#111] m-h-[100vh] ">
-            <div className="m-w-[1536px] mx-auto p-8 h-full text-white">
+            <div className="m-w-[1536px] mx-auto h-full text-white">
 
               <NavBar />
-              {children}
+              <div className="p-6">
+                {children}
+              </div>
               <Footer />
 
             </div>

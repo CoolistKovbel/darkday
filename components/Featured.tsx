@@ -20,7 +20,10 @@ function Featured() {
   useEffect(() => {
     const x = async () => {
       const res = await fetch("/api/featured")
+
+      
       const f: ThereType[] = await res.json()
+      console.log(f)
       setOg(f[0])
     }
     x()

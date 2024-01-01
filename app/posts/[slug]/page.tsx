@@ -23,6 +23,8 @@ interface SinglePageProps {
 async function SinglePage({ params }: SinglePageProps) {
   const { slug } = params;
 
+  console.log("slug in single page", slug)
+
   const data = await getData(slug);
 
 

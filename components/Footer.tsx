@@ -5,7 +5,7 @@ import { Github, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="p-y-[20px] mt-[50px] flex items-center justify-between">
+    <footer className="bg-[#222] p-6 p-y-[20px] mt-[50px] flex items-center justify-between">
 
       <div className="flex flex-col gap-[14px]">
         <div className="flex items-center gap-[10px]">

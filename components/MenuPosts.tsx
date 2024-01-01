@@ -24,14 +24,13 @@ const MenuPosts = ({withImage}:MenuPostsProps) => {
     x()
   },[])
 
-  console.log(populatPost, 'pop post in menu')
-
+  
   return (
     <div className= "flex flex-col items-end gap-[30px] mb-[60px] mt-[35px]">
 
       {
         populatPost && populatPost.map((item:any) => (
-          <Link href="/" className="flex items-center gap-[20px] w-full flex-col" key={crypto.randomUUID()}>
+          <Link href={`/posts/${item.slug}`} className="flex items-center gap-[20px] w-full flex-col" key={crypto.randomUUID()}>
        
           {withImage && (
             <div className="relative w-[80px] h-[80px] ml-auto">

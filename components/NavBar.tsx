@@ -5,11 +5,10 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
-import { InitalIze } from "@/lib/web3";
 import { Github, Twitter, Instagram } from 'lucide-react';
 import Link from "next/link";
 
-import { ModeToggle } from "./ModeToggle";
+
 import { AuthLinks } from "./AuthLinks";
 import MobileAuth from "./MobileAuth";
 
@@ -17,7 +16,7 @@ function NavBar() {
 
 
   return (
-    <div className="flex items-center justify-between gap-2 p-4">
+    <div className="bg-[#222] flex items-center justify-between gap-2 p-4">
       {/* <button onClick={() => InitalIze()}>click</button> */}
 
       {/* Soocial */}
