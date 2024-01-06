@@ -28,7 +28,7 @@ const MenuPosts = ({withImage}:MenuPostsProps) => {
   return (
     <div className= "flex flex-col items-end gap-[30px] mb-[60px] mt-[35px]">
 
-      {
+      {/* {
         populatPost && populatPost.map((item:any) => (
           <Link href={`/posts/${item.slug}`} className="flex items-center gap-[20px] w-full flex-col" key={crypto.randomUUID()}>
        
@@ -51,7 +51,7 @@ const MenuPosts = ({withImage}:MenuPostsProps) => {
   
         </Link>
         ))
-      }
+      } */}
 
 
 

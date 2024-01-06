@@ -17,27 +17,26 @@ function NavBar() {
 
   return (
     <div className="bg-[#222] flex items-center justify-between gap-2 p-4">
-      {/* <button onClick={() => InitalIze()}>click</button> */}
 
       {/* Soocial */}
-      <div className="flex items-center justify-between gap-2 ">
+      <div className="flex items-center justify-between gap-4 ">
 
         <HoverCard>
-          <HoverCardTrigger><a href="www.github.com/user/?" target='_blank' rel="noopener noreferrer"> <Github className="w-[10px] md:w-[20px] h-[20px] md:h-[20px] hover:text-[yellow]" /> </a></HoverCardTrigger>
+          <HoverCardTrigger><a href="www.github.com/user/?" target='_blank' rel="noopener noreferrer"> <Github className="w-[20px] md:w-[30px] h-[20px] md:h-[30px] hover:text-[yellow]" /> </a></HoverCardTrigger>
           <HoverCardContent>
             Follow up with feature project here on github
           </HoverCardContent>
         </HoverCard>
 
         <HoverCard>
-          <HoverCardTrigger><a href="www.github.com/user/?" target='_blank' rel="noopener noreferrer">  <Twitter className="w-[10px] md:w-[20px] h-[20px] md:h-[20px]  hover:text-[yellow]" /> </a></HoverCardTrigger>
+          <HoverCardTrigger><a href="www.github.com/user/?" target='_blank' rel="noopener noreferrer">  <Twitter className="w-[20px] md:w-[30px] h-[20px] md:h-[30px]  hover:text-[yellow]" /> </a></HoverCardTrigger>
           <HoverCardContent>
            Follow up with my latests tweets.
           </HoverCardContent>
         </HoverCard>
 
         <HoverCard>
-          <HoverCardTrigger><a href="www.github.com/user/?" target='_blank' rel="noopener noreferrer">  <Instagram className="w-[10px] md:w-[20px] h-[20px] md:h-[20px]  hover:text-[yellow]" /> </a></HoverCardTrigger>
+          <HoverCardTrigger><a href="www.github.com/user/?" target='_blank' rel="noopener noreferrer">  <Instagram className="w-[20px] md:w-[30px] h-[20px] md:h-[30px]  hover:text-[yellow]" /> </a></HoverCardTrigger>
           <HoverCardContent>
             Take a look at what i try to offer
           </HoverCardContent>

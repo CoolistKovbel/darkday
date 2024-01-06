@@ -64,6 +64,7 @@ function SignInForm() {
               className="bg-[#222] p-4 w-[250px] rounded-lg mb-10"
               onSubmit={form.handleSubmit(onSubmit)}
             >
+              
               <div className="p-2 flex flex-col gap-2">
                 <FormField
                   control={form.control}
@@ -105,6 +106,7 @@ function SignInForm() {
                   sign in
                 </Button>
               </div>
+
             </form>
           </Form>
 
@@ -116,7 +118,7 @@ function SignInForm() {
 
         <p>
           Need an account
-          <Link href="/sign-up" className="text-[yellow] font-bold">
+          <Link href="/sign-up" className="text-[yellow] font-bold ml-2">
             Sign Up
           </Link>
         </p>

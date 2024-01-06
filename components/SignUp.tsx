@@ -75,11 +75,10 @@ function SignUpForm() {
   };
 
   return (
-    <div className="bg-[#2826267a] h-screen flex items-center align-center justify-center">
-      <div className="p-10 h-full w-full flex flex-col items-center justify-between">
+    <div className=" h-screen flex items-center align-center justify-center"> {/* layer 1 */}
+
+      <div className="p-10 h-full w-full flex flex-col items-center justify-between bg-[#2826267a]  rounded-lg"> {/* layer 2 */}
         <h2 className="text-4xl md:text-8xl  font-bold ">Sign Up today</h2>
-
-
 
         <div>
 
@@ -198,6 +197,7 @@ function SignUpForm() {
           </Link>
         </p>
       </div>
+
     </div>
   );
 }
