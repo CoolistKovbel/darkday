@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 function AboutPage() {
@@ -29,6 +30,9 @@ function AboutPage() {
 
       <div>
         <h3 className="text-2xl md:text-6xl font-bold mb-10">Who Am I</h3>
+        <div  className="w-[200px] h-[200px] relative mb-10">
+            <Image src="/TestConflict.png" alt="logo" fill />
+        </div>
         <p className="mb-2 leading-2 text-md">
           Im just a dude who is trying to get back on track and get back what he
           lost. My time, money, my word I guess. Lost so much I am tired of it
@@ -69,6 +73,7 @@ function AboutPage() {
           <strong> president.</strong>
         </p>
       </div>
+
     </div>
   );
 }

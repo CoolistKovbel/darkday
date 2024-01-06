@@ -21,7 +21,7 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 
 import axios from "axios";
-import Image from "next/image";
+
 
 // import {  toast } from 'react-toastify';
 
@@ -82,9 +82,7 @@ function SignUpForm() {
 
         <div>
 
-          <div  className="w-[200px] h-[200px] relative mb-10">
-            <Image src="/TestConflict.png" alt="logo" fill />
-          </div>
+
 
 
           {/* Signup Form */}
