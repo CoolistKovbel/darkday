@@ -2,6 +2,7 @@ import Comments from "@/components/Comments";
 import Menu from "@/components/Menu";
 import Image from "next/image";
 import React from "react";
+import moment from "moment";
 
 
 const getData = async (slug: any) => {
@@ -23,7 +24,6 @@ interface SinglePageProps {
 async function SinglePage({ params }: SinglePageProps) {
   const { slug } = params;
 
-  console.log("slug in single page", slug)
 
   const data = await getData(slug);
 
@@ -58,7 +58,7 @@ async function SinglePage({ params }: SinglePageProps) {
               <span className="text-[20px] font-bold">
                 {data?.user.username}
               </span>
-              <span className="">{data?.createdAt}</span>
+              <span className="">{moment(data?.createdAt.toString()).format('MMM Do YY')}</span>
             </div>
 
           </div>

@@ -69,7 +69,7 @@ function Comments({ postSlug }: CommmentsProps) {
               name="comment"
               control={form.control}
               render={({ field }) => (
-                <Textarea {...field} className="my-4 resize-none h-[150px]" />
+                <Textarea {...field} className="my-4 resize-none h-[150px] text-black" />
               )}
             />
 
@@ -86,7 +86,7 @@ function Comments({ postSlug }: CommmentsProps) {
           ? "loading"
           : data?.map((item: any) => (
               <div
-                key={item._id}
+                key={crypto.randomUUID()}
                 className="flex items-center justify-between bg-[#444] p-4"
               >
                 <div className="flex items-center gap-[20px]">

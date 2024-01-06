@@ -1,4 +1,4 @@
-import Image from 'next/image'
+
 import React from 'react'
 import MenuPosts from './MenuPosts'
 import CategoryList from './CategoryList'
