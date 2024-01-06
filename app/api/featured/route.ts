@@ -1,8 +1,8 @@
 import { db } from "@/lib/db";
-import { NextApiRequest, NextApiResponse } from "next";
+
 import { NextResponse } from "next/server";
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(req: Request, res: Response) {
   try {
     const data = await db.post.findMany({
       where: {
@@ -13,6 +13,6 @@ export async function GET(req: NextApiRequest, res: NextApiResponse) {
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
     console.error("Error:", error);
-    return res.json({ error: "Internal Server Error", status: 500 });
+    return NextResponse.json({ error: "Internal Server Error", status: 500 });
   }
 }
