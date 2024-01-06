@@ -33,6 +33,7 @@ function Featured() {
   const img = (og as ThereType).img;
 
 
+
   return (
     <div className='mt-[30px]'>
       {/* Title */}
@@ -46,9 +47,13 @@ function Featured() {
       <div className='mt-[60px] flex align-center gap-[50px] flex-col md:flex-row'>
 
         {/* Image container */}
-        <div className='relative w-[300px] md:w-[800px] h-[300px] md:h-[500px] shadow-lg'>
-          <Image src={img} alt="featured image" fill    />
-        </div>
+        {
+          img && (
+          <div className='relative w-[300px] md:w-[800px] h-[300px] md:h-[500px] shadow-lg'>
+            <Image src={img} alt="featured image" fill    />
+          </div>
+          )
+        }
 
         <div className='flex-1 flex  justify-between flex-col'>
           <div>

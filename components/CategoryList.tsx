@@ -44,7 +44,7 @@ function CategoryList({withImage}: CategoryList) {
           dataz?.map((item: any) => (
             <Link
               href={`/blog?cat=${item.slug}`}
-              key={item._id}
+              key={crypto.randomUUID()}
               className="flex items-center relative gap-3 capitalize bg-[#111] w-[40%] md:w-[15%] h-[80px] justify-center drop-shadow-lg shadow-[#50d71e] border-2 border-[#222] rounded-md m-auto"
             >
               {withImage &&  (
