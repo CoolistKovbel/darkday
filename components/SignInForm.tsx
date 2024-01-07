@@ -32,7 +32,7 @@ function SignInForm() {
 
       const res = await signIn("credentials", {
         MetaAddress: values.metaAddress,
-        password: values.password,
+        Password: values.password,
         redirect: false
       });
 

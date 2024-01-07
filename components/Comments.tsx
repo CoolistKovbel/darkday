@@ -34,8 +34,10 @@ interface CommmentsProps {
 function Comments({ postSlug }: CommmentsProps) {
   const status = useSession();
 
+
+  // dynmaic listing pleasing
   const { data, mutate, isLoading } = useSWR(
-    `http://localhost:3000/api/comments?postSlug=${postSlug}`,
+    `https://mind-pain-78q6.vercel.app/api/comments?postSlug=${postSlug}`,
     fetcher
   );
 

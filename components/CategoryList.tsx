@@ -3,9 +3,8 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-
 const getData = async () => {
-  const res = await fetch(`http://localhost:3000/api/category`, {
+  const res = await fetch(`/api/category`, {
     cache: "no-store",
   });
 
@@ -16,11 +15,11 @@ const getData = async () => {
   return res.json();
 };
 
-interface CategoryList{
-  withImage: boolean
+interface CategoryList {
+  withImage: boolean;
 }
 
-function CategoryList({withImage}: CategoryList) {
+function CategoryList({ withImage }: CategoryList) {
   const [dataz, setDataZ] = useState([]);
 
   useEffect(() => {
@@ -34,10 +33,8 @@ function CategoryList({withImage}: CategoryList) {
 
   return (
     <div className="my-32">
-    
       {/* Categories */}
       <div className="flex justify-between text-center gap-10 flex-wrap flex-col md:flex-row">
-
         {/* Category */}
 
         {dataz &&
@@ -47,7 +44,7 @@ function CategoryList({withImage}: CategoryList) {
               key={crypto.randomUUID()}
               className="flex items-center relative gap-3 capitalize bg-[#111] w-[40%] md:w-[15%] h-[80px] justify-center drop-shadow-lg shadow-[#50d71e] border-2 border-[#222] rounded-md m-auto"
             >
-              {withImage &&  (
+              {withImage && (
                 <Image
                   src={item.img}
                   alt="cat"
@@ -58,12 +55,9 @@ function CategoryList({withImage}: CategoryList) {
               )}
 
               <p className="font-bold">{item.title}</p>
-
             </Link>
           ))}
-
       </div>
-
     </div>
   );
 }

@@ -6,7 +6,8 @@ import moment from "moment";
 
 
 const getData = async (slug: any) => {
-  const res = await fetch(`http:localhost:3000/api/posts/${slug}`, {
+  // Danamic listing please here too
+  const res = await fetch(`https://mind-pain-78q6.vercel.app/api/posts/${slug}`, {
     cache: "no-store",
   });
 

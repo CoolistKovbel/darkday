@@ -19,7 +19,12 @@ const MenuPosts = ({withImage}:MenuPostsProps) => {
     const x = async () => {
       const res = await fetch("/api/popular")
       
-      setPopularPost(await res.json())
+      const data = await res.json();
+  
+      // Grabbing the first six items
+      const popularPosts = data.slice(0, 4);
+      
+      setPopularPost(popularPosts);
     }
     x()
   },[])

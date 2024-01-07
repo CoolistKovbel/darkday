@@ -2,7 +2,6 @@
 
 import {
   Layout,
-  LogOut,
   Mail,
   MessageSquare,
   Plus,
