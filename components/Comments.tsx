@@ -36,8 +36,13 @@ function Comments({ postSlug }: CommmentsProps) {
 
 
   // dynmaic listing pleasing
+  // const { data, mutate, isLoading } = useSWR(
+  //   `https://mind-pain-78q6.vercel.app/api/comments?postSlug=${postSlug}`,
+  //   fetcher
+  // );
+
   const { data, mutate, isLoading } = useSWR(
-    `https://mind-pain-78q6.vercel.app/api/comments?postSlug=${postSlug}`,
+    `http://localhost:3000/api/comments?postSlug=${postSlug}`,
     fetcher
   );
 

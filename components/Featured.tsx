@@ -19,14 +19,6 @@ function Featured() {
   const [og, setOg] = useState<ThereType | {}>({});
   const router = useRouter();
 
-  useEffect(() => {
-    const x = async () => {
-      const res = await fetch("/api/featured");
-      const f: ThereType[] = await res.json();
-      setOg(f[0]);
-    };
-    x();
-  },[]);
 
   const title = (og as ThereType).title;
   const desc = (og as ThereType).desc;
@@ -35,6 +27,26 @@ function Featured() {
   const view = (og as ThereType).views;
   const created = (og as ThereType).createdAt;
   const cat = (og as ThereType).catSlug;
+
+
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch("/api/featured");
+        const f: ThereType[] = await res.json();
+        setOg(f[0]);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      fetchData();
+    }
+  }, []);
+
 
   return (
     <div className="mt-[30px]">

@@ -6,10 +6,11 @@ import moment from "moment";
 
 
 const getData = async (slug: any) => {
-  // Danamic listing please here too
-  const res = await fetch(`https://mind-pain-78q6.vercel.app/api/posts/${slug}`, {
+
+  const res = await fetch(`/api/posts/${slug}`, {
     cache: "no-store",
   });
+
 
   if (!res.ok) {
     throw new Error("Failed");
