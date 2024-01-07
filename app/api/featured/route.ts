@@ -12,7 +12,7 @@ export async function GET(req: Request, res: Response) {
 
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
-    console.error("Error:", error);
+    // console.error("Error:", error);
     return NextResponse.json({ error: "Internal Server Error", status: 500 });
   }
 }

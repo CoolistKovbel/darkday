@@ -27,8 +27,8 @@ export const GET = async (req: Request) => {
 
     return new NextResponse(JSON.stringify({ posts, count }), { status: 200 });
   } catch (err: any) {
-    console.log(err);
-    return new NextResponse(err, { status: 500 });
+    // console.log(err);
+    return new NextResponse("error in get posts", { status: 500 });
   }
 };
 
@@ -62,7 +62,7 @@ export const POST = async (req: Request) => {
 
     return NextResponse.json((post), { status: 200 });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     return NextResponse.json({ message: "Something went wrong!" }, { status: 500 })
   }
 };

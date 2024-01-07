@@ -19,7 +19,6 @@ export const GET = async (req: Request) => {
             include: {user: true}
         })
 
-        console.log(comments)
 
         return NextResponse.json(comments, {status:200})
         
@@ -55,7 +54,7 @@ export const POST = async (req: Request) => {
         return NextResponse.json(comm.toString(), {status:200})
         
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return NextResponse.json("error in comment post route", {status:500})
     }
 

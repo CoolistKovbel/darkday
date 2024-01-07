@@ -19,7 +19,7 @@ export const GET = async (req: Request, { params }:GetRequest ) => {
 
     return NextResponse.json(post, {status: 200});
   } catch (err) {
-    console.log(err);
-    return NextResponse.json({err: err}, {status: 500})
+    // console.log(err);
+    return NextResponse.json({err: 'in posts {1}'}, {status: 500})
   }
 };
