@@ -1,8 +1,10 @@
-import { NextAuthOptions, getServerSession } from "next-auth";
+import { NextAuthOptions, getServerSession, RequestInternal } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { db } from "./db";
 import { compare } from "bcrypt";
+
+
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(db),
@@ -15,30 +17,26 @@ export const authOptions: NextAuthOptions = {
   },
   providers: [
     CredentialsProvider({
-      name: "rawrXd",
+      name: "credentials",
       credentials: {
         MetaAddress: { label: "MetaAddress", placeholder: "0x" },
-        password: { label: "Password", type: "password" },
+        Password: { label: "password", type: "password" },
       },
-      async authorize(credentials) {
-        
-        console.log(credentials, "Crednetials login field")
-
-        if (!credentials?.MetaAddress || !credentials?.password) {
+      async authorize(credentials: Record<"MetaAddress" | "Password", string> | undefined, req: Pick<RequestInternal, "query" | "body" | "headers" | "method">) {
+        if (!credentials?.MetaAddress || !credentials?.Password) {
           return null;
         }
 
         const existingUser = await db.user.findUnique({
-          where: { MetaAddress: credentials?.MetaAddress},
-        }); 
+          where: { MetaAddress: credentials?.MetaAddress },
+        });
 
-        
         if (!existingUser) {
           return null;
         }
 
         const passwordMatch = await compare(
-          credentials.password,
+          credentials.Password,
           existingUser.password
         );
 
@@ -47,47 +45,36 @@ export const authOptions: NextAuthOptions = {
         }
 
         return {
-          id: `${existingUser.id}`,
-          userId: existingUser.userId,
+          id: existingUser.id,
           username: existingUser.username || "",
           email: existingUser.email,
-          eddress: existingUser.eddress || "" ,
-          image: existingUser.image,
-
-        };
+          MetaAddress: existingUser.MetaAddress || "",
+          image: existingUser.image || null,
+        } ;
       },
     }),
   ],
   callbacks: {
-    async jwt({ token, user, profile }) {
-
-        // console.log(profile, "jwt token callback")
-
-      // Persist the OAuth access_token and or the user id to the token right after signin
+    async jwt({ token, user }) {
       if (user) {
-        
         return {
           ...token,
           username: user.username,
-          eddress: user.eddress,
-          userId: user.userId,
+          MetaAddress: user.MetaAddress,
           image: user.image,
-          id: user.id
-
+          id: user.id,
         };
       }
       return token;
     },
     async session({ session, token }) {
-        // console.log(token, "Logging from the auth session funcion")
       return {
         ...session,
         user: {
           ...session.user,
           username: token.username,
           eddress: token.eddress,
-          userId: token.userId,
-          id: token.id
+          id: token.id,
         },
       };
     },
